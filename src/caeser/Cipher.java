@@ -25,8 +25,8 @@ public class Cipher {
 		for (char input : phrase) {
 			int unicode = input;
 
-			// if ( ! Character.isLetter(input) )
-			// return input;
+//			 if ( ! Character.isLetter(input) )
+//			 return ;
 
 			unicode = unicode + shift;
 			if (Character.isUpperCase(input) && unicode > 'Z' || Character.isLowerCase(input) && unicode > 'z') {
@@ -35,6 +35,13 @@ public class Cipher {
 			if (Character.isUpperCase(input) && unicode < 'A' || Character.isLowerCase(input) && unicode < 'a') {
 				unicode += 26;
 			}
+			if (input == 32) { // if input equals unicode 32 ['\u0020'] which is whitespace,
+				unicode = 32 ; // unicode == 32, or whitespace
+			}
+//			if (Character.isUpperCase(input) && unicode < 'A' || Character.isLowerCase(input) && unicode > 'Z' && unicode < 'a' || Character.isLowerCase(input) && unicode > 'z' ) {
+//				System.out.println("Sorry! Only letters are allowed to be entered into the Cipher! ");
+//				break;
+//			}                                                             // this didn't work :( Tried to handle punctuation
 			String actual_val = Character.toString((char) unicode);
 			System.out.print(actual_val);
 		}

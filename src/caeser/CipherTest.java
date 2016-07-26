@@ -13,11 +13,11 @@ public class CipherTest {
 		System.out.print("Enter 1 for encode and 2 for decode: ");
 		decision = keyboard.nextInt();
 		
-		System.out.print("Enter the word: ");
+		System.out.print("Enter the word or phrase: ");
 		keyboard.nextLine();
 		word = keyboard.nextLine();
 		
-		System.out.print("Enter the shift amount (i.e. 1):");
+		System.out.print("Enter the shift amount (i.e. 1): ");
 		shiftamount = keyboard.nextInt();
 		
 		if (decision == 1) {
